@@ -1,4 +1,4 @@
-# Agentic DCS Lab｜燃煤机组智能控制参考实验室
+# Agentic DCS Lab｜燃煤机组智能控制实验室
 
 [English](README.en.md) · [架构](docs/architecture.md) · [安全论证](docs/safety-case.md) · [路线图](ROADMAP.md)
 
