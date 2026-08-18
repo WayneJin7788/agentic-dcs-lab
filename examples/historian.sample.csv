@@ -1,0 +1,9 @@
+timestamp_s,key,value,quality
+1000,load_mw,295.0,good
+1000,steam_pressure_mpa,16.65,good
+1000,drum_level_mm,5.0,good
+1000,oxygen_pct,3.6,good
+1000,fuel_pct,49.0,good
+1000,feedwater_pct,50.0,good
+1000,air_pct,52.0,good
+1000,throttle_pct,50.0,good

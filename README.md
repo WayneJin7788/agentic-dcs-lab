@@ -1,6 +1,6 @@
 # Agentic DCS Lab｜智能DCS实验室
 
-[English](README.en.md) · [架构](docs/architecture.md) · [安全论证](docs/safety-case.md) · [路线图](ROADMAP.md)
+[English](README.en.md) · [架构](docs/architecture.md) · [真实 DCS 数据](docs/real-dcs-data.md) · [安全论证](docs/safety-case.md) · [路线图](ROADMAP.md)
 
 > **研究软件，不可用于生产控制。** 本项目的代码和示例没有经过任何机组、SIL、型式或法规认证；不得连接真实 DCS 写通道，不得替代 BMS/FSSS、ETS、SIS、机械超速保护或人工紧急停机能力。
 
@@ -14,7 +14,10 @@ Agentic DCS Lab 是一个**仿真优先、可审计、安全层独立**的开源
 - 演示 `观察 → 计划 → 安全裁决 → 执行 → 审计` 工作流；
 - 对所有执行量实施硬限值与变化率限制；
 - 在规划器异常时自动保持上一安全输出并留下审计记录；
-- 为未来接入 MPC、强化学习、LLM、数字孪生和 OPC UA 只读数据提供稳定接口。
+- 读取经过校验的历史数据并进行确定性回放；
+- 通过能力受限的 OPC UA 边界接入现场只读数据；
+- 对坏质量、过期、缺失、未来时间戳和越界测点实施整帧拒绝；
+- 在没有任何写执行能力的影子模式中生成并审计控制建议。
 
 ## 明确不做什么
 
@@ -40,7 +43,7 @@ flowchart LR
     S["独立 SIS / FSSS / ETS"] -. "不受 AI 控制" .-> P
 ```
 
-项目采用四级部署成熟度：`simulation`（仿真）、`shadow`（影子）、`advisory`（建议）、`controlled_write`（受控写入）。仓库默认且目前只支持 `simulation`；任何升级都必须经过现场危害分析、独立验证、管理审批和回退演练。
+项目采用四级部署成熟度：`simulation`（仿真）、`shadow`（影子）、`advisory`（建议）、`controlled_write`（受控写入）。仓库现支持仿真、历史回放和只读影子数据边界；任何写入升级都必须经过现场危害分析、独立验证、管理审批和回退演练。
 
 ## 五分钟运行
 
@@ -58,6 +61,12 @@ agentic-dcs --steps 300 --target-load 300
 
 ```bash
 agentic-dcs --steps 60 --fail-planner-at 20 --audit artifacts/audit.jsonl
+```
+
+使用匿名示例历史数据运行影子评估：
+
+```bash
+python examples/run_shadow_replay.py
 ```
 
 测试：

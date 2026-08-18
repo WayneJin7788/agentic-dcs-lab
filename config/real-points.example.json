@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "deployment_mode": "shadow",
+  "points": [
+    {"key": "load_mw", "source_address": "ns=2;s=UNIT1.GEN.ACTIVE_POWER", "engineering_unit": "MW", "minimum": 0, "maximum": 1200, "max_age_s": 5, "writable": false},
+    {"key": "steam_pressure_mpa", "source_address": "ns=2;s=UNIT1.BOILER.MAIN_STEAM_PRESSURE", "engineering_unit": "MPa", "minimum": 0, "maximum": 35, "max_age_s": 5, "writable": false},
+    {"key": "drum_level_mm", "source_address": "ns=2;s=UNIT1.BOILER.DRUM_LEVEL", "engineering_unit": "mm", "minimum": -500, "maximum": 500, "max_age_s": 2, "writable": false},
+    {"key": "oxygen_pct", "source_address": "ns=2;s=UNIT1.BOILER.FLUE_GAS_O2", "engineering_unit": "%", "minimum": 0, "maximum": 21, "max_age_s": 10, "writable": false},
+    {"key": "fuel_pct", "source_address": "ns=2;s=UNIT1.CCS.FUEL_DEMAND", "engineering_unit": "%", "minimum": 0, "maximum": 100, "max_age_s": 5, "writable": false},
+    {"key": "feedwater_pct", "source_address": "ns=2;s=UNIT1.CCS.FEEDWATER_DEMAND", "engineering_unit": "%", "minimum": 0, "maximum": 100, "max_age_s": 5, "writable": false},
+    {"key": "air_pct", "source_address": "ns=2;s=UNIT1.CCS.AIR_DEMAND", "engineering_unit": "%", "minimum": 0, "maximum": 100, "max_age_s": 5, "writable": false},
+    {"key": "throttle_pct", "source_address": "ns=2;s=UNIT1.TURBINE.GOVERNOR_DEMAND", "engineering_unit": "%", "minimum": 0, "maximum": 100, "max_age_s": 5, "writable": false}
+  ]
+}

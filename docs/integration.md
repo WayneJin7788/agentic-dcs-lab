@@ -8,6 +8,8 @@ Synthetic plant only. CI exercises safety invariants, failure injection and audi
 
 Read-only, one-way data replication into a segregated research environment. Proposed outputs are compared with operator/DCS actions and can never reach control equipment.
 
+The repository now implements the point registry, historian replay, field-data validation, a capability-limited OPC UA reader boundary and a shadow evaluator. See [real-dcs-data.md](real-dcs-data.md). A site-specific SDK bridge and cybersecurity approval are still required before connecting to any plant network.
+
 Exit evidence: data-quality handling, replay determinism, cybersecurity review, scenario coverage, documented false-positive/negative rates and operator review.
 
 ## Level 2 — advisory
