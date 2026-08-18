@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 from .agents import FallbackController, ObserverAgent, PlannerAgent, SafetyGovernor
 from .audit import JsonlAuditSink
-from .models import ActuatorCommand, Decision, DecisionStatus, Setpoints
+from .models import Decision, DecisionStatus, Setpoints
 from .plant import BoilerTurbinePlant
 
 

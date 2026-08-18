@@ -40,7 +40,11 @@ class PlannerAgent:
     def propose(self, context: ProcessContext) -> ActuatorCommand:
         m = context.measurement
         fuel = m.fuel_pct + 0.028 * context.load_error_mw + 0.7 * context.pressure_error_mpa
-        throttle = m.throttle_pct + 0.035 * context.load_error_mw - 0.25 * context.pressure_error_mpa
+        throttle = (
+            m.throttle_pct
+            + 0.035 * context.load_error_mw
+            - 0.25 * context.pressure_error_mpa
+        )
         feedwater = m.feedwater_pct + 0.06 * context.level_error_mm + 0.35 * (fuel - m.fuel_pct)
         air = m.air_pct + 0.55 * (fuel - m.fuel_pct) + 0.8 * context.oxygen_error_pct
         return ActuatorCommand(fuel, feedwater, air, throttle)
