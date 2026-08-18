@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "agentic-dcs-lab"
-version = "0.1.0"
-description = "Simulation-first reference architecture for governed agentic control research in coal-fired power plants"
+version = "0.2.0"
+description = "Governed simulation and read-only shadow architecture for agentic power-plant control research"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Apache-2.0" }

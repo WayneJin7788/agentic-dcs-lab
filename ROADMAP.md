@@ -11,8 +11,9 @@
 ## v0.2 — reproducible evaluation
 
 - [ ] versioned scenario schema and scenario catalog
-- [ ] measurement quality/freshness model
-- [ ] deterministic replay and golden traces
+- [x] measurement quality/freshness model
+- [x] deterministic CSV historian replay foundation
+- [ ] golden traces and historian format plugins
 - [ ] metrics: constraint violations, tracking error, settling time and intervention rate
 - [ ] fault-injection matrix for sensor, actuator, planner and communications failures
 - [ ] baseline PID and MPC planners for comparison
@@ -26,8 +27,10 @@
 
 ## v0.4 — shadow laboratory
 
-- [ ] secure read-only OPC UA adapter
-- [ ] time-series replay and digital-twin calibration API
+- [x] capability-limited read-only OPC UA boundary and policy checks
+- [x] vendor-neutral point registry and canonical measurement mapping
+- [ ] production OPC UA SDK bridge with site-managed PKI
+- [ ] time-series connectors and digital-twin calibration API
 - [ ] proposal-versus-DCS comparison dashboard
 - [ ] model registry, signed policies and SBOM
 - [ ] operator feedback workflow
