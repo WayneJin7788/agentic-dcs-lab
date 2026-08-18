@@ -1,0 +1,25 @@
+name: Research proposal
+description: Propose a model, scenario, safety invariant, or architecture change
+title: "[Research]: "
+labels: ["research", "triage"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Proposed method and evidence
+      description: Explain benchmarks, baselines and falsifiable acceptance criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety and security impact
+    validations:
+      required: true
+

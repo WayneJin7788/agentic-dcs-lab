@@ -1,0 +1,13 @@
+{
+  "name": "300 MW nominal load tracking",
+  "mode": "simulation",
+  "steps": 300,
+  "setpoints": {
+    "target_load_mw": 300.0,
+    "target_pressure_mpa": 16.7,
+    "target_drum_level_mm": 0.0,
+    "target_oxygen_pct": 3.5
+  },
+  "write_enabled": false
+}
+
